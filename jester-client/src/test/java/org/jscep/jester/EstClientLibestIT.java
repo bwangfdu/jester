@@ -41,7 +41,7 @@ public class EstClientLibestIT {
             public void encode(OutputStream out, CertificationRequest... entity) throws IOException {
                out.write(entity[0].getBytes()); 
             }
-        }, "ec2-54-204-91-178.compute-1.amazonaws.com:8443");
+        }, "testrfc7030.cisco.com:8443");
         X509Certificate[] explicitTaDatabase = estClient.obtainCaCertificates(); // 4.1.1
     }
     
@@ -98,7 +98,7 @@ public class EstClientLibestIT {
     private BasicCredentialsProvider credentialsProvider() {
         BasicCredentialsProvider credentialsProvider = new BasicCredentialsProvider();
         credentialsProvider.setCredentials(
-                new AuthScope("ec2-54-204-91-178.compute-1.amazonaws.com", 8443), 
+                new AuthScope("testrfc7030.cisco.com", 8443), 
                 new UsernamePasswordCredentials("estuser", "estpwd"));
         return credentialsProvider;
     }
